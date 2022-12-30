@@ -24,7 +24,6 @@ s = bs(text, parser)
 for tag in s.find_all('div', id="middleContainer"):
     data['title'] = tag.find('div', id='ctitle').text
     data['url'] = tag.find_all('a')[-1]['href']
-    print(tag.find_all('a')[-2]['href'])
 
 print(f"comic found: {data['title']} (#{comicn})")
 subprocess.run(['wget', data['url'], '-q'])
